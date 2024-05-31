@@ -166,10 +166,13 @@ class Chat:
         result = infer_code(self.pretrain_models, text, **params_infer_code, return_hidden=use_decoder)
         
         if use_decoder:
+            # decoder用于音频解码任务，通过解码器部分处理输入特征，生成音频信号。
             mel_spec = [self.pretrain_models['decoder'](i[None].permute(0,2,1)) for i in result['hiddens']]
         else:
+            # dvae用于音频生成或重建任务，通过解码器和量化层处理输入特征，生成音频信号
             mel_spec = [self.pretrain_models['dvae'](i[None].permute(0,2,1)) for i in result['ids']]
-            
+        
+        # 通过特征提取器将音频信号转换为梅尔频谱图，然后通过主干网络进行处理，最后通过输出头将处理后的特征转换回音频信号
         wav = [self.pretrain_models['vocos'].decode(i).cpu().numpy() for i in mel_spec]
         
         return wav
