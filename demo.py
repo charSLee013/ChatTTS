@@ -26,19 +26,19 @@ chat = ChatTTS.Chat()
 chat.load_models(
     source="local",
     local_path=model_dir,
-    device='cpu'
-    # compile=False,
+    device='cpu',
+    compile=False,
 )
 
 torch.manual_seed(SEED) # 音色种子
 params_infer_code = {
     'spk_emb': chat.sample_random_speaker(),
-    'temperature': 0.00000001,
+    'temperature': 0.3,
     'top_P': 0.7,
     'top_K': 20,
 }
 
-params_refine_text = {'prompt': '[speed6]'}
+params_refine_text = {'prompt': '[oral_5][laugh_1][break_3]'}
 
 texts = ["So we found being competitive and collaborative was a huge way of staying motivated towards our goals, so one person to call when you fall off, one person who gets you back on then one person to actually do the activity with",
         #  "游戏发生在一个被称作「提瓦特」的幻想世界，在这里，被神选中的人将被授予「神之眼」，导引元素之力。",
@@ -62,7 +62,6 @@ def filter_punctuation(text):
         if char.isalnum() or char in allowed_punctuations:
             new_text += char
     return new_text
-
 
 # 使用新函数替换原有的预处理步骤
 for t in texts:
