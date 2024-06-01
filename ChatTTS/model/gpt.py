@@ -263,6 +263,7 @@ class GPT_warpper(nn.Module):
                     else:
                         # code_emb = [self.emb_code[i](model_input['input_ids'][:,:,i]) for i in range(self.num_vq)]
                         # model_input['inputs_embeds'] = torch.stack(code_emb, 3).sum(3)
+                        
                         code_emb = []   # 用于存储每个向量量化层的嵌入表示
                         # 通过遍历多个向量量化层（VQ 层），为每个层的 token IDs 生成嵌入表示。这种方法可以捕捉输入序列中不同层次的信息
                         for i in range(self.num_vq):
@@ -274,20 +275,20 @@ class GPT_warpper(nn.Module):
                             # 将每个向量量化层的嵌入表示存储在 code_emb 列表中
                             code_emb.append(emb_i)
 
-                            # 堆叠后的形状为 (batch_size, sequence_length, embedding_dim, num_vq)
-                            stacked_emb = torch.stack(code_emb, dim=3)
-                            
-                            # 对堆叠后的张量在第 3 维度上进行求和
-                            final_emb = stacked_emb.sum(dim=3)
-                            
-                            # 将最终的嵌入表示添加到 model_input 字典中
-                            model_input['inputs_embeds'] = final_emb
-                            
-                            # 解释：将多个嵌入表示沿新的维度堆叠起来，并在该维度上求和，生成一个综合的嵌入表示。这种方法可以将不同层次的信息融合在一起，提供更丰富的输入表示
-                            # 在一些高级应用中，可能会使用多层嵌入表示。例如：
-                            # 在多头注意力机制中，不同的头可以看作是不同的层，每个头捕捉输入序列的不同方面的信息
-                            # 在多任务学习中，不同的任务可能需要不同的嵌入表示，通过多层嵌入表示可以为每个任务生成特定的嵌入表示
-                            # 在一些生成模型中，向量量化技术用于将连续的嵌入表示离散化，以便更好地捕捉输入序列的结构信息
+                        # 堆叠后的形状为 (batch_size, sequence_length, embedding_dim, num_vq)
+                        stacked_emb = torch.stack(code_emb, 3)
+                        
+                        # 对堆叠后的张量在第 3 维度上进行求和
+                        final_emb = stacked_emb.sum(3)
+                        
+                        # 将最终的嵌入表示添加到 model_input 字典中
+                        model_input['inputs_embeds'] = final_emb
+                        
+                        # 解释：将多个嵌入表示沿新的维度堆叠起来，并在该维度上求和，生成一个综合的嵌入表示。这种方法可以将不同层次的信息融合在一起，提供更丰富的输入表示
+                        # 在一些高级应用中，可能会使用多层嵌入表示。例如：
+                        # 在多头注意力机制中，不同的头可以看作是不同的层，每个头捕捉输入序列的不同方面的信息
+                        # 在多任务学习中，不同的任务可能需要不同的嵌入表示，通过多层嵌入表示可以为每个任务生成特定的嵌入表示
+                        # 在一些生成模型中，向量量化技术用于将连续的嵌入表示离散化，以便更好地捕捉输入序列的结构信息
                 
                 # 由于我们已经生成了嵌入表示并将其存储在 model_input['inputs_embeds'] 中，因此不再需要 input_ids
                 model_input['input_ids'] = None
