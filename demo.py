@@ -15,7 +15,7 @@ torch._dynamo.config.suppress_errors = True
 torch.set_float32_matmul_precision('high')
 logging.basicConfig(level=logging.DEBUG)
 
-SEED = 1122
+# SEED = 1122
 
 #模型下载
 from modelscope import snapshot_download
@@ -30,25 +30,26 @@ chat.load_models(
     compile=False,
 )
 
-torch.manual_seed(SEED) # 音色种子
+# torch.manual_seed(SEED) # 音色种子
 params_infer_code = {
     'spk_emb': chat.sample_random_speaker(),
-    'temperature': 0.3,
-    'top_P': 0.7,
-    'top_K': 20,
+    'temperature': 0.1,
+    'top_P': 0.9,
+    'top_K': 50,
 }
 
-params_refine_text = {'prompt': '[oral_5][laugh_1][break_3]'}
+# params_refine_text = {}
+params_refine_text = {'prompt': '[oral_0][laugh_0][break_0]'}
 
-texts = ["So we found being competitive and collaborative was a huge way of staying motivated towards our goals, so one person to call when you fall off, one person who gets you back on then one person to actually do the activity with",
-         "游戏发生在一个被称作「提瓦特」的幻想世界，在这里，被神选中的人将被授予「神之眼」，导引元素之力。",
-         "你将扮演一位名为「旅行者」的神秘角色，在自由的旅行中邂逅性格各异、能力独特的同伴们，和他们一起击败强敌，找回失散的亲人——同时，逐步发掘「原神」的真相。",
-         "因为你的素养很差，我现在每天玩原神都能赚150原石，每个月差不多5000原石的收入， 也就是现实生活中每个月5000美元的收入水平，换算过来最少也30000人民币，",
-         "虽然我只有14岁，但是已经超越了中国绝大多数人(包括你)的水平，这便是原神给我的骄傲的资本。",
-         "毫不夸张地说，《原神》是miHoYo迄今为止规模最为宏大，也是最具野心的一部作品。",
-         "即便在经历了8700个小时的艰苦战斗后，游戏还有许多尚未发现的秘密，错过的武器与装备，以及从未使用过的法术和技能。",
-         "尽管游戏中的战斗体验和我们之前在烧机系列游戏所见到的没有多大差别，但游戏中各类精心设计的敌人以及Boss战已然将战斗抬高到了一个全新的水平。",
-         "就和几年前的《 塞尔达传说 》一样，《原神》也是一款能够推动同类游戏向前发展的优秀作品。",
+
+texts = ["准备好了吗？我要求可是很严格的。",
+        #  "拿好留影机，我要出题了。",
+        #  "嗯，复习一下构图要领，准备好再来吧。",
+        #  "我这里没什么需要帮忙的，去看看其他人吧。",
+        #  "你就安心吧。我的眼光能有错？",
+        #  "克洛琳德说得没错啊，会长大人真是可靠！",
+        #  "说起来，我以前也没想到克洛琳德小姐私下里讲话这么轻松呢！",
+        #  "哈哈哈，跟你们聊天真开心，来翘英庄真是正确的选择。",
         ]
 
 # 对文本进行预处理
@@ -70,16 +71,18 @@ for t in texts:
     filter_text:str = chat.infer(
         text=filter_text, skip_refine_text=False, refine_text_only=True,
         params_refine_text=params_refine_text,
-        params_infer_code=params_infer_code)[0]
-    filter_text = filter_text.replace(" ","")
+        params_infer_code=params_infer_code,
+        do_text_normalization=False)[0]
+    # filter_text = filter_text.replace(" ","")
     logging.info(f"输入文本: {t}\n预处理后的文本: {filter_text}")
     new_texts.append(filter_text)
 
-torch.manual_seed(SEED) # 推理种子
+# torch.manual_seed(SEED) # 推理种子
 all_wavs = chat.infer(new_texts, use_decoder=True,
                 params_infer_code=params_infer_code,
                 skip_refine_text=True,
-                params_refine_text=params_refine_text)
+                params_refine_text=params_refine_text,
+                do_text_normalization=False)
 
 # 确保所有数组的维度都是 (1, N)，然后进行合并
 combined_wavs = np.concatenate(all_wavs, axis=1)
