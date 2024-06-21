@@ -179,14 +179,13 @@ class DVAE(nn.Module):
     def forward(self, inp):
         """
         假设inp的形状为torch.Size([1, 4, 121])
+        如果是decoder模型则形状是 torch.Size([1, 768, 330])
         """
 
         if self.vq_layer is not None:
             # vq_feats的形状为torch.Size([1, 1024, 121])
             # 使用 GFSQ 的 _embed 函数来量化输入特征。然后将量化的特征（vq_feats）用于进一步处理
-            torch.save(inp, 'inp.pt')
             vq_feats = self.vq_layer._embed(inp)
-            torch.save(vq_feats, 'vq_feats.pt')
         else:
             vq_feats = inp.detach().clone()
         
@@ -202,6 +201,7 @@ class DVAE(nn.Module):
         
         # 根据量化和处理过的特征重建音频信号,解码后的输出 dec_out 形状为 (1, 242, 512)
         # DVAEDecoder 利用准备好的特征，通过卷积和残差块对其进行处理，以生成接近原始音频信号的解码输出。
+        # 如果是decoder模型这里的形状是 torch.Size([1, 660, 384])
         dec_out = self.decoder(input=vq_feats)
         
         # 解码后的输出被转置并通过附加的卷积层 (out_conv) 以调整其维度。

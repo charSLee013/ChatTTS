@@ -204,6 +204,37 @@ class Chat:
 
         return wav
 
+    def infer_debug(
+        self,
+        text,
+        params_infer_code={'prompt': '[speed_5]'},
+    ):
+
+        assert self.check_model(use_decoder=True)
+
+        if not isinstance(text, list):
+            text = [text]
+
+        # Directly prepend the prompt without text refinement or normalization
+        text = [params_infer_code.get('prompt', '') + i for i in text]
+        params_infer_code.pop('prompt', '')
+
+        # Perform inference directly to get hidden representations
+        result = infer_code(self.pretrain_models, text, **params_infer_code, return_hidden=True)
+        
+        # Extracting hiddens from the result
+        hiddens = result['hiddens']
+
+        # Decode using the decoder to get Mel spectrograms
+        mel_spec = [self.pretrain_models['decoder'](i[None].permute(0, 2, 1)) for i in hiddens]
+
+        # Convert Mel spectrograms to audio signals
+        wav = [self.pretrain_models['vocos'].decode(i).cpu().numpy() for i in mel_spec]
+
+        # Return both hiddens and audio data
+        return {'hiddens': hiddens, 'wav': wav}
+
+
     def sample_random_speaker(self, ):
 
         dim = self.pretrain_models['gpt'].gpt.layers[0].mlp.gate_proj.in_features
@@ -228,74 +259,3 @@ class Chat:
                         Run: conda install -c conda-forge pynini=2.1.5 && pip install nemo_text_processing')
                 self.normalizer[lang] = partial(Normalizer(
                     input_case='cased', lang=lang).normalize, verbose=False, punct_post_process=True)
-
-        # def infer_style_tranfer(self,
-        #                         text,
-        #                         use_vq_encoder=True,
-        #                         vq_encoder=None,
-        #                         audio_data=None,
-        #                         audio_lengths=None,
-        #                         sr=None,
-        #                         skip_refine_text=False,
-        #                         refine_text_only=False,
-        #                         params_refine_text={},
-        #                         params_infer_code={'prompt': '[speed_5]'},
-        #                         use_decoder=True,
-        #                         do_text_normalization=True,
-        #                         lang=None,
-        #                         return_mel_spec=False,
-        #                         return_infer_token=False,  # 返回推理的中间结果
-        #                         ):
-        #     assert self.check_model(use_decoder=use_decoder)
-
-        #     # 文本标准化和预处理
-        #     if do_text_normalization:
-        #         for i, t in enumerate(text):
-        #             _lang = detect_language(t) if lang is None else lang
-        #             self.init_normalizer(_lang)
-        #             text[i] = self.normalizer[_lang](t)
-        #             if _lang == 'zh':
-        #                 text[i] = apply_half2full_map(text[i])
-
-        #     # 文本精炼
-        #     if not skip_refine_text:
-        #         text_tokens = refine_text(
-        #             self.pretrain_models, text, **params_refine_text)['ids']
-        #         text = self.pretrain_models['tokenizer'].batch_decode(
-        #             text_tokens)
-
-        #     # 音色编码
-        #     text = [params_infer_code.get('prompt', '') + i for i in text]
-        #     result = infer_code(self.pretrain_models,
-        #                         text, **params_infer_code)
-
-        #     # 使用VQEncoder进行风格迁移
-        #     if use_vq_encoder and vq_encoder is not None:
-        #         # 获取 infer_code 的输出特征
-        #         features = result['hiddens'][None]
-        #         # 调整形状以适应VQEncoder
-        #         # (batch_size, feature_dim, seq_len)
-        #         features = features.permute(0, 2, 1)
-        #         # 使用VQEncoder进行风格迁移
-        #         encoded_features = vq_encoder.quantizer(features).z
-        #         # 恢复形状 (batch_size, seq_len, feature_dim)
-        #         encoded_features = encoded_features.permute(0, 2, 1)
-        #     else:
-        #         encoded_features = result['hiddens']
-
-        #     if use_decoder:
-        #         # 使用解码器将特征转换为梅尔频谱图
-        #         mel_spec = [self.pretrain_models['decoder'](
-        #             i[None].permute(0, 2, 1)) for i in encoded_features]
-        #     else:
-        #         # 使用dvae将特征转换为梅尔频谱图
-        #         mel_spec = [self.pretrain_models['dvae'](
-        #             i[None].permute(0, 2, 1)) for i in result['ids']]
-
-        #     if return_mel_spec:
-        #         return mel_spec
-        #     else:
-        #         # 将梅尔频谱图转换回音频信号的numpy数组
-        #         wav = [self.pretrain_models['vocos'].decode(
-        #             i).cpu().numpy() for i in mel_spec]
-        #         return wav

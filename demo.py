@@ -86,7 +86,7 @@ for t in texts:
     new_texts.append(filter_text)
 
 torch.manual_seed(SEED) # 推理种子
-all_wavs = chat.infer(new_texts, use_decoder=False,
+all_wavs = chat.infer([filter_punctuation(texts[0])], use_decoder=True,
                 params_infer_code=params_infer_code,
                 skip_refine_text=True,
                 params_refine_text=params_refine_text,
