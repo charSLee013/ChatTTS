@@ -197,6 +197,7 @@ class Chat:
         # 是否直接返回梅尔声谱图
         if return_mel_spec:
             return mel_spec
+        print(f"mel shape is {mel_spec[0].shape}")
         # 将梅尔声谱图转换回音频信号的numpy数组
         wav = [self.pretrain_models['vocos'].decode(
             i).cpu().numpy() for i in mel_spec]

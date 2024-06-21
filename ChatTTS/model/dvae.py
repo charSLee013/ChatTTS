@@ -184,7 +184,9 @@ class DVAE(nn.Module):
         if self.vq_layer is not None:
             # vq_feats的形状为torch.Size([1, 1024, 121])
             # 使用 GFSQ 的 _embed 函数来量化输入特征。然后将量化的特征（vq_feats）用于进一步处理
+            torch.save(inp, 'inp.pt')
             vq_feats = self.vq_layer._embed(inp)
+            torch.save(vq_feats, 'vq_feats.pt')
         else:
             vq_feats = inp.detach().clone()
         
@@ -207,7 +209,6 @@ class DVAE(nn.Module):
         # 先进行转置后的 dec_out 形状为 (1, 512, 242)
         # 然后再通过卷积层后，dec_out 形状为 (1, 100, 242)
         dec_out = self.out_conv(dec_out.transpose(1, 2))
-        # Mel 频谱图 mel 的形状为 (1, 100, 242)
+        # Mel 频谱图的形状为 (1, 100, 242)
         mel = dec_out * self.coef
-
         return mel

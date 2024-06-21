@@ -1,9 +1,11 @@
+import os
 import random
 import wave
 import numpy as np
 import torchaudio
 import ChatTTS
 from scipy.io.wavfile import write
+import librosa
 
 # from zh_normalization import TextNormalizer
 import logging
@@ -15,7 +17,7 @@ torch._dynamo.config.suppress_errors = True
 torch.set_float32_matmul_precision('high')
 logging.basicConfig(level=logging.DEBUG)
 
-# SEED = 1122
+SEED = 1397
 
 #模型下载
 from modelscope import snapshot_download
@@ -30,9 +32,15 @@ chat.load_models(
     compile=False,
 )
 
-# torch.manual_seed(SEED) # 音色种子
+torch.manual_seed(SEED) # 音色种子
+# load from local file if exists
+if os.path.exists('spk_emb.npy'):
+    spk_emb = torch.load('spk_emb.npy',map_location='cpu')
+else:
+    spk_emb = chat.sample_random_speaker()
 params_infer_code = {
-    'spk_emb': chat.sample_random_speaker(),
+    'spk_emb':spk_emb,
+    # "spk_emb":torch.randn(768),
     'temperature': 0.1,
     'top_P': 0.9,
     'top_K': 50,
@@ -42,7 +50,7 @@ params_infer_code = {
 params_refine_text = {'prompt': '[oral_0][laugh_0][break_0]'}
 
 
-texts = ["准备好了吗？我要求可是很严格的。",
+texts = ["接下来,杨叔，借我看一下现场地图。他肯定穿过了前面的那扇门，不可能在这么小的地方晃悠了两小时。",
         #  "拿好留影机，我要出题了。",
         #  "嗯，复习一下构图要领，准备好再来吧。",
         #  "我这里没什么需要帮忙的，去看看其他人吧。",
@@ -77,8 +85,8 @@ for t in texts:
     logging.info(f"输入文本: {t}\n预处理后的文本: {filter_text}")
     new_texts.append(filter_text)
 
-# torch.manual_seed(SEED) # 推理种子
-all_wavs = chat.infer(new_texts, use_decoder=True,
+torch.manual_seed(SEED) # 推理种子
+all_wavs = chat.infer(new_texts, use_decoder=False,
                 params_infer_code=params_infer_code,
                 skip_refine_text=True,
                 params_refine_text=params_refine_text,
