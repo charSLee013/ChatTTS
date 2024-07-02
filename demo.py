@@ -28,7 +28,7 @@ chat = ChatTTS.Chat()
 chat.load_models(
     source="local",
     local_path=model_dir,
-    device='cpu',
+    device='mps',
     compile=False,
 )
 
@@ -51,7 +51,7 @@ params_refine_text = {'prompt': '[oral_0][laugh_0][break_0]'}
 
 
 texts = ["接下来,杨叔，借我看一下现场地图。他肯定穿过了前面的那扇门，不可能在这么小的地方晃悠了两小时。",
-        #  "拿好留影机，我要出题了。",
+         "拿好留影机，我要出题了。",
         #  "嗯，复习一下构图要领，准备好再来吧。",
         #  "我这里没什么需要帮忙的，去看看其他人吧。",
         #  "你就安心吧。我的眼光能有错？",
@@ -86,7 +86,7 @@ for t in texts:
     new_texts.append(filter_text)
 
 torch.manual_seed(SEED) # 推理种子
-all_wavs = chat.infer([filter_punctuation(texts[0])], use_decoder=True,
+all_wavs = chat.infer(new_texts, use_decoder=False,
                 params_infer_code=params_infer_code,
                 skip_refine_text=True,
                 params_refine_text=params_refine_text,
