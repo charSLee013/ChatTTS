@@ -1,0 +1,2071 @@
+2024-07-03 02:42:45,823 - modelscope - INFO - PyTorch version 2.1.0 Found.
+2024-07-03 02:42:45,823 - modelscope - INFO - Loading ast index from /Users/charslee/.cache/modelscope/ast_indexer
+2024-07-03 02:42:45,849 - modelscope - INFO - Loading done! Current index file version is 1.13.3, with md5 8e4efa69aee288a831cd8dd27b421a93 and a total number of 972 components indexed
+INFO:ChatTTS.core:Load from local: /Users/charslee/.cache/modelscope/hub/mirror013/ChatTTS
+INFO:ChatTTS.core:vocos loaded.
+INFO:ChatTTS.core:dvae loaded.
+INFO:ChatTTS.core:gpt loaded.
+INFO:ChatTTS.core:decoder loaded.
+INFO:ChatTTS.core:tokenizer loaded.
+INFO:ChatTTS.core:All initialized.
+INFO:ChatTTS.core:All initialized.
+DEBUG:ChatTTS.model.gpt:Initializing with batch size: 1, sequence length: 52
+DEBUG:ChatTTS.model.gpt:Creating attention mask cache with size: 1 x 436
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 0
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1046 s and forward past_key_values size: 1597440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0090 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0023 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1170 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0000 s and past_key_values size: 1597440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0371 s and forward past_key_values size: 1628160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0075 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0477 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 1628160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0373 s and forward past_key_values size: 1658880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0066 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0025 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0469 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 1658880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0850 s and forward past_key_values size: 1689600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0086 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0053 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0996 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 1689600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0881 s and forward past_key_values size: 1720320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0127 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0076 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1101 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0014 s and past_key_values size: 1720320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0815 s and forward past_key_values size: 1751040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0099 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0030 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0969 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 1751040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0548 s and forward past_key_values size: 1781760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0091 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0051 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0705 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 1781760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0505 s and forward past_key_values size: 1812480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0078 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0025 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0624 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 1812480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0373 s and forward past_key_values size: 1843200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0079 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0028 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0486 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 1843200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0390 s and forward past_key_values size: 1873920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0078 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0032 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0505 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 1873920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0422 s and forward past_key_values size: 1904640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0112 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0037 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0580 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 1904640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0632 s and forward past_key_values size: 1935360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0096 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0032 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0776 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 1935360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0430 s and forward past_key_values size: 1966080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0076 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0031 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0543 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 1966080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0537 s and forward past_key_values size: 1996800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0076 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0031 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0652 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 1996800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0402 s and forward past_key_values size: 2027520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0077 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0027 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0513 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2027520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0469 s and forward past_key_values size: 2058240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0078 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0030 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0584 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 2058240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0377 s and forward past_key_values size: 2088960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0076 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0488 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2088960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0414 s and forward past_key_values size: 2119680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0080 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0528 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2119680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0384 s and forward past_key_values size: 2150400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0080 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0499 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 2150400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0368 s and forward past_key_values size: 2181120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0155 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0035 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0565 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2181120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0725 s and forward past_key_values size: 2211840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0104 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0032 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0868 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2211840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0431 s and forward past_key_values size: 2242560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0100 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0033 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0571 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 2242560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0619 s and forward past_key_values size: 2273280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0096 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0065 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0786 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 2273280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0927 s and forward past_key_values size: 2304000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.1260 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0034 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.2234 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2304000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1000 s and forward past_key_values size: 2334720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0104 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0124 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1243 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0058 s and past_key_values size: 2334720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0654 s and forward past_key_values size: 2365440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0076 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0032 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0835 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 2365440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0429 s and forward past_key_values size: 2396160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0114 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0027 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0576 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2396160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0385 s and forward past_key_values size: 2426880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0076 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0032 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0500 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2426880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0424 s and forward past_key_values size: 2457600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0083 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0038 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0552 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2457600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0720 s and forward past_key_values size: 2488320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0087 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0028 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0840 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2488320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0622 s and forward past_key_values size: 2519040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0231 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0084 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0953 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2519040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0744 s and forward past_key_values size: 2549760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0088 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0027 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0871 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2549760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0384 s and forward past_key_values size: 2580480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0075 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0489 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2580480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0361 s and forward past_key_values size: 2611200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0075 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0468 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2611200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0408 s and forward past_key_values size: 2641920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0078 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0027 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0519 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2641920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0803 s and forward past_key_values size: 2672640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0070 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0906 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2672640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0418 s and forward past_key_values size: 2703360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0068 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0516 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 2703360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0387 s and forward past_key_values size: 2734080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0079 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0030 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0506 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 2734080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0393 s and forward past_key_values size: 2764800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0068 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0028 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0497 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 2764800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0421 s and forward past_key_values size: 2795520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0081 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0033 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0543 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 2795520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0391 s and forward past_key_values size: 2826240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0075 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0503 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2826240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0415 s and forward past_key_values size: 2856960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0088 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0030 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0537 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2856960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0384 s and forward past_key_values size: 2887680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0074 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0492 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 2887680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0380 s and forward past_key_values size: 2918400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0073 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0028 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0488 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2918400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0481 s and forward past_key_values size: 2949120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0077 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0593 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2949120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0452 s and forward past_key_values size: 2979840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0297 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0066 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0821 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 2979840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0412 s and forward past_key_values size: 3010560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0100 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0543 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 3010560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0378 s and forward past_key_values size: 3041280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0083 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0027 s
+INFO:root:输入文本: 接下来,杨叔，借我看一下现场地图。他肯定穿过了前面的那扇门，不可能在这么小的地方晃悠了两小时。
+预处理后的文本: 接 下 来 ， 杨 叔 ， 借 我 看 一 下 现 场 地 图 。 他 肯 定 穿 过 了 前 面 的 那 扇 门 ， 不 可 能 在 这 么 小 的 地 方 晃 悠 了 两 小 时 。
+INFO:ChatTTS.core:All initialized.
+DEBUG:ChatTTS.model.gpt:Initializing with batch size: 1, sequence length: 17
+DEBUG:ChatTTS.model.gpt:Creating attention mask cache with size: 1 x 401
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 0
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0839 s and forward past_key_values size: 522240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0098 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0023 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0964 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0000 s and past_key_values size: 522240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0385 s and forward past_key_values size: 552960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0087 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0023 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0499 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 552960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0360 s and forward past_key_values size: 583680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0086 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0473 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 583680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0349 s and forward past_key_values size: 614400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0081 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0025 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0462 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 614400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0380 s and forward past_key_values size: 645120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0076 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0068 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0534 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 645120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0427 s and forward past_key_values size: 675840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0091 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0025 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0548 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 675840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0378 s and forward past_key_values size: 706560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0079 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0487 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 706560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0367 s and forward past_key_values size: 737280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0088 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0032 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0492 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 737280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0361 s and forward past_key_values size: 768000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0073 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0028 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0468 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 768000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0395 s and forward past_key_values size: 798720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0075 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0500 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 798720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0370 s and forward past_key_values size: 829440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0074 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0476 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 829440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0368 s and forward past_key_values size: 860160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0066 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0579 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 860160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0326 s and forward past_key_values size: 890880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0083 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0028 s
+INFO:root:输入文本: 拿好留影机，我要出题了。
+预处理后的文本: 拿 好 留 影 机 ， 我 要 出 题 了 。
+INFO:ChatTTS.core:All initialized.
+DEBUG:ChatTTS.model.gpt:Initializing with batch size: 2, sequence length: 50
+DEBUG:ChatTTS.model.gpt:Creating attention mask cache with size: 2 x 2098
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0000 s and past_key_values size: 0
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1528 s and forward past_key_values size: 3072000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1555 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0000 s and past_key_values size: 3072000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1318 s and forward past_key_values size: 3133440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0007 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1349 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 3133440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1033 s and forward past_key_values size: 3194880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1062 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 3194880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1208 s and forward past_key_values size: 3256320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0007 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1242 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 3256320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0995 s and forward past_key_values size: 3317760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1026 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 3317760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.2137 s and forward past_key_values size: 3379200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.2166 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 3379200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1211 s and forward past_key_values size: 3440640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1251 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 3440640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1181 s and forward past_key_values size: 3502080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1217 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 3502080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1495 s and forward past_key_values size: 3563520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1531 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 3563520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1640 s and forward past_key_values size: 3624960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0022 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1680 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 3624960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1456 s and forward past_key_values size: 3686400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1487 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 3686400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1116 s and forward past_key_values size: 3747840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1153 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 3747840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1083 s and forward past_key_values size: 3809280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1113 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 3809280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1098 s and forward past_key_values size: 3870720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1132 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 3870720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1043 s and forward past_key_values size: 3932160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1070 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 3932160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1043 s and forward past_key_values size: 3993600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1076 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 3993600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1149 s and forward past_key_values size: 4055040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1180 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 4055040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1043 s and forward past_key_values size: 4116480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0021 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1082 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4116480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1165 s and forward past_key_values size: 4177920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1200 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4177920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1135 s and forward past_key_values size: 4239360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0021 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1170 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 4239360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1644 s and forward past_key_values size: 4300800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1679 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4300800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1073 s and forward past_key_values size: 4362240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1111 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 4362240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1101 s and forward past_key_values size: 4423680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1136 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4423680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1073 s and forward past_key_values size: 4485120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1103 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 4485120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1147 s and forward past_key_values size: 4546560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1328 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4546560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1128 s and forward past_key_values size: 4608000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1166 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 4608000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1114 s and forward past_key_values size: 4669440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1153 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4669440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1168 s and forward past_key_values size: 4730880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1198 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4730880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1078 s and forward past_key_values size: 4792320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1110 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 4792320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1115 s and forward past_key_values size: 4853760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1148 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4853760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1062 s and forward past_key_values size: 4915200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1097 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 4915200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1211 s and forward past_key_values size: 4976640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1250 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 4976640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1057 s and forward past_key_values size: 5038080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1089 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 5038080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1293 s and forward past_key_values size: 5099520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1338 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 5099520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1073 s and forward past_key_values size: 5160960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0021 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1110 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 5160960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1099 s and forward past_key_values size: 5222400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1135 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 5222400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1040 s and forward past_key_values size: 5283840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0023 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1080 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 5283840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1049 s and forward past_key_values size: 5345280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1085 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 5345280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1048 s and forward past_key_values size: 5406720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1080 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 5406720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1047 s and forward past_key_values size: 5468160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1082 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 5468160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1060 s and forward past_key_values size: 5529600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1091 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 5529600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1047 s and forward past_key_values size: 5591040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1090 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 5591040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1055 s and forward past_key_values size: 5652480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1089 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 5652480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.2274 s and forward past_key_values size: 5713920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.2309 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 5713920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1388 s and forward past_key_values size: 5775360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1422 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 5775360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1073 s and forward past_key_values size: 5836800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1107 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 5836800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1071 s and forward past_key_values size: 5898240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1105 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 5898240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1053 s and forward past_key_values size: 5959680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1090 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 5959680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1071 s and forward past_key_values size: 6021120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1103 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 6021120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1484 s and forward past_key_values size: 6082560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1523 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 6082560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1067 s and forward past_key_values size: 6144000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1095 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 6144000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1123 s and forward past_key_values size: 6205440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1156 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 6205440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1170 s and forward past_key_values size: 6266880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1206 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 6266880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1114 s and forward past_key_values size: 6328320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1152 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 6328320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1116 s and forward past_key_values size: 6389760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1156 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 6389760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1102 s and forward past_key_values size: 6451200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1140 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 6451200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1158 s and forward past_key_values size: 6512640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1545 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 6512640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1187 s and forward past_key_values size: 6574080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1223 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 6574080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1287 s and forward past_key_values size: 6635520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1486 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 6635520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1144 s and forward past_key_values size: 6696960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1181 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 6696960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1073 s and forward past_key_values size: 6758400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1108 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 6758400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1068 s and forward past_key_values size: 6819840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1110 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 6819840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1079 s and forward past_key_values size: 6881280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0023 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1117 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 6881280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1083 s and forward past_key_values size: 6942720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1120 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 6942720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1097 s and forward past_key_values size: 7004160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0021 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1136 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 7004160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1067 s and forward past_key_values size: 7065600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1110 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 7065600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1158 s and forward past_key_values size: 7127040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1192 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 7127040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1116 s and forward past_key_values size: 7188480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0037 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1174 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 7188480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1142 s and forward past_key_values size: 7249920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1172 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 7249920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1096 s and forward past_key_values size: 7311360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1132 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 7311360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1147 s and forward past_key_values size: 7372800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1181 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 7372800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1043 s and forward past_key_values size: 7434240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1083 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 7434240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1112 s and forward past_key_values size: 7495680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1155 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 7495680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1184 s and forward past_key_values size: 7557120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1225 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 7557120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1153 s and forward past_key_values size: 7618560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1186 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 7618560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1114 s and forward past_key_values size: 7680000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1150 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 7680000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.2411 s and forward past_key_values size: 7741440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.2456 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 7741440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1260 s and forward past_key_values size: 7802880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1296 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 7802880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1611 s and forward past_key_values size: 7864320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1650 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 7864320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1147 s and forward past_key_values size: 7925760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1179 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 7925760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1113 s and forward past_key_values size: 7987200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1142 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 7987200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1139 s and forward past_key_values size: 8048640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1176 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 8048640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1183 s and forward past_key_values size: 8110080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1217 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 8110080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0979 s and forward past_key_values size: 8171520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1019 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 8171520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1062 s and forward past_key_values size: 8232960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1097 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 8232960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1039 s and forward past_key_values size: 8294400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1081 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 8294400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1042 s and forward past_key_values size: 8355840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1074 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 8355840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1008 s and forward past_key_values size: 8417280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1040 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 8417280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1007 s and forward past_key_values size: 8478720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0022 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1049 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 8478720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1010 s and forward past_key_values size: 8540160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1034 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 8540160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1052 s and forward past_key_values size: 8601600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1085 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 8601600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1257 s and forward past_key_values size: 8663040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1282 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 8663040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0975 s and forward past_key_values size: 8724480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1005 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 8724480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0989 s and forward past_key_values size: 8785920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1022 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 8785920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1086 s and forward past_key_values size: 8847360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1124 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 8847360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1006 s and forward past_key_values size: 8908800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1035 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 8908800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0981 s and forward past_key_values size: 8970240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1011 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 8970240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1010 s and forward past_key_values size: 9031680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1044 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 9031680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0978 s and forward past_key_values size: 9093120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0027 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1026 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 9093120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1002 s and forward past_key_values size: 9154560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1034 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 9154560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1189 s and forward past_key_values size: 9216000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1221 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 9216000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1118 s and forward past_key_values size: 9277440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1155 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 9277440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1624 s and forward past_key_values size: 9338880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0054 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1708 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 9338880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1357 s and forward past_key_values size: 9400320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1388 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 9400320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1480 s and forward past_key_values size: 9461760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1515 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 9461760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1033 s and forward past_key_values size: 9523200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1084 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 9523200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1350 s and forward past_key_values size: 9584640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0031 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1409 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 9584640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1199 s and forward past_key_values size: 9646080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1231 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 9646080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1060 s and forward past_key_values size: 9707520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1093 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 9707520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0947 s and forward past_key_values size: 9768960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0980 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 9768960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0964 s and forward past_key_values size: 9830400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0999 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 9830400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0907 s and forward past_key_values size: 9891840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0936 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 9891840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0910 s and forward past_key_values size: 9953280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0941 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 9953280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0952 s and forward past_key_values size: 10014720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0983 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 10014720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0980 s and forward past_key_values size: 10076160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1014 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 10076160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1079 s and forward past_key_values size: 10137600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1113 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 10137600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0880 s and forward past_key_values size: 10199040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0905 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 10199040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1007 s and forward past_key_values size: 10260480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1062 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 10260480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1051 s and forward past_key_values size: 10321920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1080 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 10321920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0886 s and forward past_key_values size: 10383360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0919 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 10383360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1052 s and forward past_key_values size: 10444800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1079 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 10444800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1258 s and forward past_key_values size: 10506240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0060 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0045 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1379 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0016 s and past_key_values size: 10506240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1052 s and forward past_key_values size: 10567680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1097 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 10567680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1022 s and forward past_key_values size: 10629120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1057 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 10629120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1070 s and forward past_key_values size: 10690560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1106 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 10690560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1004 s and forward past_key_values size: 10752000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1035 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 10752000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1117 s and forward past_key_values size: 10813440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1152 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 10813440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1238 s and forward past_key_values size: 10874880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1272 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 10874880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0949 s and forward past_key_values size: 10936320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0984 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 10936320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0930 s and forward past_key_values size: 10997760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0961 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 10997760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0931 s and forward past_key_values size: 11059200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0957 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 11059200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0934 s and forward past_key_values size: 11120640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0968 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 11120640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0931 s and forward past_key_values size: 11182080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0962 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 11182080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0879 s and forward past_key_values size: 11243520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0902 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 11243520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0953 s and forward past_key_values size: 11304960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0982 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 11304960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0982 s and forward past_key_values size: 11366400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1014 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 11366400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1333 s and forward past_key_values size: 11427840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1375 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 11427840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1110 s and forward past_key_values size: 11489280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1156 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 11489280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0915 s and forward past_key_values size: 11550720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0949 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 11550720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0933 s and forward past_key_values size: 11612160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0964 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 11612160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1077 s and forward past_key_values size: 11673600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1107 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 11673600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1087 s and forward past_key_values size: 11735040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1117 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 11735040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1034 s and forward past_key_values size: 11796480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1078 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 11796480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0932 s and forward past_key_values size: 11857920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0964 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 11857920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0927 s and forward past_key_values size: 11919360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0962 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 11919360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0956 s and forward past_key_values size: 11980800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0986 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 11980800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1106 s and forward past_key_values size: 12042240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1138 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 12042240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1040 s and forward past_key_values size: 12103680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1075 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 12103680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0925 s and forward past_key_values size: 12165120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0964 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 12165120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0957 s and forward past_key_values size: 12226560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0989 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 12226560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0902 s and forward past_key_values size: 12288000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0937 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 12288000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0894 s and forward past_key_values size: 12349440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0931 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 12349440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0866 s and forward past_key_values size: 12410880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0007 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0894 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 12410880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0861 s and forward past_key_values size: 12472320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0899 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 12472320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0938 s and forward past_key_values size: 12533760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0964 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 12533760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0993 s and forward past_key_values size: 12595200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1028 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 12595200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1266 s and forward past_key_values size: 12656640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1306 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 12656640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1016 s and forward past_key_values size: 12718080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1052 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 12718080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1026 s and forward past_key_values size: 12779520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1064 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 12779520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0964 s and forward past_key_values size: 12840960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1007 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 12840960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0948 s and forward past_key_values size: 12902400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0990 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 12902400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0987 s and forward past_key_values size: 12963840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1023 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 12963840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0948 s and forward past_key_values size: 13025280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0981 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 13025280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0890 s and forward past_key_values size: 13086720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0924 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 13086720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1274 s and forward past_key_values size: 13148160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1310 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 13148160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1154 s and forward past_key_values size: 13209600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1195 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 13209600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1116 s and forward past_key_values size: 13271040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1142 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 13271040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1083 s and forward past_key_values size: 13332480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1121 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 13332480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1217 s and forward past_key_values size: 13393920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1246 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 13393920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1004 s and forward past_key_values size: 13455360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1029 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 13455360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1034 s and forward past_key_values size: 13516800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1081 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 13516800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1039 s and forward past_key_values size: 13578240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1071 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 13578240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0996 s and forward past_key_values size: 13639680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1033 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 13639680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0973 s and forward past_key_values size: 13701120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1012 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 13701120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1088 s and forward past_key_values size: 13762560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1125 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 13762560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1096 s and forward past_key_values size: 13824000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1127 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 13824000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1020 s and forward past_key_values size: 13885440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1054 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 13885440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0927 s and forward past_key_values size: 13946880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0955 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 13946880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0909 s and forward past_key_values size: 14008320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0943 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 14008320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0888 s and forward past_key_values size: 14069760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0921 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 14069760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1333 s and forward past_key_values size: 14131200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1695 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 14131200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1002 s and forward past_key_values size: 14192640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1040 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 14192640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0982 s and forward past_key_values size: 14254080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1023 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 14254080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1571 s and forward past_key_values size: 14315520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0067 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0038 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1689 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0013 s and past_key_values size: 14315520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1169 s and forward past_key_values size: 14376960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1210 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 14376960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0940 s and forward past_key_values size: 14438400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0972 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 14438400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0911 s and forward past_key_values size: 14499840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0938 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 14499840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0989 s and forward past_key_values size: 14561280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1025 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 14561280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1052 s and forward past_key_values size: 14622720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1082 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 14622720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0950 s and forward past_key_values size: 14684160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0983 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 14684160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1379 s and forward past_key_values size: 14745600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1417 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 14745600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0976 s and forward past_key_values size: 14807040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1008 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 14807040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1131 s and forward past_key_values size: 14868480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1176 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 14868480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1040 s and forward past_key_values size: 14929920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1075 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 14929920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1184 s and forward past_key_values size: 14991360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1220 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 14991360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1091 s and forward past_key_values size: 15052800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1132 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 15052800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0896 s and forward past_key_values size: 15114240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0929 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 15114240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0881 s and forward past_key_values size: 15175680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0913 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 15175680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0878 s and forward past_key_values size: 15237120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0905 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 15237120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0958 s and forward past_key_values size: 15298560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0992 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 15298560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1026 s and forward past_key_values size: 15360000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1059 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 15360000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0985 s and forward past_key_values size: 15421440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1016 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 15421440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1150 s and forward past_key_values size: 15482880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1188 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 15482880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0899 s and forward past_key_values size: 15544320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0932 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 15544320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0956 s and forward past_key_values size: 15605760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0994 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 15605760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0985 s and forward past_key_values size: 15667200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1018 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 15667200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0893 s and forward past_key_values size: 15728640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0924 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 15728640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0889 s and forward past_key_values size: 15790080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0919 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 15790080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0911 s and forward past_key_values size: 15851520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0951 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 15851520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0915 s and forward past_key_values size: 15912960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0949 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 15912960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0963 s and forward past_key_values size: 15974400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1003 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 15974400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0973 s and forward past_key_values size: 16035840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1014 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 16035840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1333 s and forward past_key_values size: 16097280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1375 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 16097280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1066 s and forward past_key_values size: 16158720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1105 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 16158720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1064 s and forward past_key_values size: 16220160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1101 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 16220160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0968 s and forward past_key_values size: 16281600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1002 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 16281600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0968 s and forward past_key_values size: 16343040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0996 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0016 s and past_key_values size: 16343040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0948 s and forward past_key_values size: 16404480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0994 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 16404480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0947 s and forward past_key_values size: 16465920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0981 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 16465920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0899 s and forward past_key_values size: 16527360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0934 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 16527360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0941 s and forward past_key_values size: 16588800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0981 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 16588800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1054 s and forward past_key_values size: 16650240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1091 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 16650240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1027 s and forward past_key_values size: 16711680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1064 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 16711680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0948 s and forward past_key_values size: 16773120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0984 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 16773120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0923 s and forward past_key_values size: 16834560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0950 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 16834560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0951 s and forward past_key_values size: 16896000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0988 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 16896000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1198 s and forward past_key_values size: 16957440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1237 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 16957440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0932 s and forward past_key_values size: 17018880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0967 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 17018880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0921 s and forward past_key_values size: 17080320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0947 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 17080320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0929 s and forward past_key_values size: 17141760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0021 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0970 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 17141760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0908 s and forward past_key_values size: 17203200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0941 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 17203200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1050 s and forward past_key_values size: 17264640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1091 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 17264640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1062 s and forward past_key_values size: 17326080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1098 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 17326080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0922 s and forward past_key_values size: 17387520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0955 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 17387520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0907 s and forward past_key_values size: 17448960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0948 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 17448960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0928 s and forward past_key_values size: 17510400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0969 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 17510400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0945 s and forward past_key_values size: 17571840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0982 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 17571840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0919 s and forward past_key_values size: 17633280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0952 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 17633280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0912 s and forward past_key_values size: 17694720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0942 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 17694720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0901 s and forward past_key_values size: 17756160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0932 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 17756160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0923 s and forward past_key_values size: 17817600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0957 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 17817600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1047 s and forward past_key_values size: 17879040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1082 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 17879040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1049 s and forward past_key_values size: 17940480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0023 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1093 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 17940480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1062 s and forward past_key_values size: 18001920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1096 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0001 s and past_key_values size: 18001920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0980 s and forward past_key_values size: 18063360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1028 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0014 s and past_key_values size: 18063360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1106 s and forward past_key_values size: 18124800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0029 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1166 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 18124800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1050 s and forward past_key_values size: 18186240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0026 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1097 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 18186240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1038 s and forward past_key_values size: 18247680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1069 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 18247680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1058 s and forward past_key_values size: 18309120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1087 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 18309120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1049 s and forward past_key_values size: 18370560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1093 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 18370560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1108 s and forward past_key_values size: 18432000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0022 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1152 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 18432000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1447 s and forward past_key_values size: 18493440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1480 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 18493440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1072 s and forward past_key_values size: 18554880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1106 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 18554880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1153 s and forward past_key_values size: 18616320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1194 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0013 s and past_key_values size: 18616320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1368 s and forward past_key_values size: 18677760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1408 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 18677760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1111 s and forward past_key_values size: 18739200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1141 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 18739200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1080 s and forward past_key_values size: 18800640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1114 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 18800640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1013 s and forward past_key_values size: 18862080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1042 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 18862080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0942 s and forward past_key_values size: 18923520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0975 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 18923520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1201 s and forward past_key_values size: 18984960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1232 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 18984960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1087 s and forward past_key_values size: 19046400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1125 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 19046400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0926 s and forward past_key_values size: 19107840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0956 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 19107840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0916 s and forward past_key_values size: 19169280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0951 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 19169280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1240 s and forward past_key_values size: 19230720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1275 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 19230720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1022 s and forward past_key_values size: 19292160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1056 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 19292160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0941 s and forward past_key_values size: 19353600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0977 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 19353600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0905 s and forward past_key_values size: 19415040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0007 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0937 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 19415040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0897 s and forward past_key_values size: 19476480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0931 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0002 s and past_key_values size: 19476480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0968 s and forward past_key_values size: 19537920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1000 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 19537920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1165 s and forward past_key_values size: 19599360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1197 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 19599360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0953 s and forward past_key_values size: 19660800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0983 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0015 s and past_key_values size: 19660800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0931 s and forward past_key_values size: 19722240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0970 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0014 s and past_key_values size: 19722240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0982 s and forward past_key_values size: 19783680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1029 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 19783680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0926 s and forward past_key_values size: 19845120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0962 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 19845120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0934 s and forward past_key_values size: 19906560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0973 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 19906560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1031 s and forward past_key_values size: 19968000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1068 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 19968000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0949 s and forward past_key_values size: 20029440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0992 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 20029440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0974 s and forward past_key_values size: 20090880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1005 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 20090880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1137 s and forward past_key_values size: 20152320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1176 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 20152320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1057 s and forward past_key_values size: 20213760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1096 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 20213760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0953 s and forward past_key_values size: 20275200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0989 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 20275200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0968 s and forward past_key_values size: 20336640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0007 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1006 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 20336640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0971 s and forward past_key_values size: 20398080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1010 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 20398080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0922 s and forward past_key_values size: 20459520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0954 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0003 s and past_key_values size: 20459520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0920 s and forward past_key_values size: 20520960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0007 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0944 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 20520960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0930 s and forward past_key_values size: 20582400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0965 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 20582400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0938 s and forward past_key_values size: 20643840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0967 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 20643840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0941 s and forward past_key_values size: 20705280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0972 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 20705280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1134 s and forward past_key_values size: 20766720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1170 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0014 s and past_key_values size: 20766720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1024 s and forward past_key_values size: 20828160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1061 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0017 s and past_key_values size: 20828160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1091 s and forward past_key_values size: 20889600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1140 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0019 s and past_key_values size: 20889600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1088 s and forward past_key_values size: 20951040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1136 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0013 s and past_key_values size: 20951040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1104 s and forward past_key_values size: 21012480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1145 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0031 s and past_key_values size: 21012480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1127 s and forward past_key_values size: 21073920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1183 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 21073920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1002 s and forward past_key_values size: 21135360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1033 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 21135360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1026 s and forward past_key_values size: 21196800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0023 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1067 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 21196800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1003 s and forward past_key_values size: 21258240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1040 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 21258240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1177 s and forward past_key_values size: 21319680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1219 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 21319680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1140 s and forward past_key_values size: 21381120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1173 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 21381120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1361 s and forward past_key_values size: 21442560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1407 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 21442560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0967 s and forward past_key_values size: 21504000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1001 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 21504000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1028 s and forward past_key_values size: 21565440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1067 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 21565440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0931 s and forward past_key_values size: 21626880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0962 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 21626880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0931 s and forward past_key_values size: 21688320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0960 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 21688320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0929 s and forward past_key_values size: 21749760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0961 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 21749760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0916 s and forward past_key_values size: 21811200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0949 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 21811200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1007 s and forward past_key_values size: 21872640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1044 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 21872640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1089 s and forward past_key_values size: 21934080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1121 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 21934080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0950 s and forward past_key_values size: 21995520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0986 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 21995520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0931 s and forward past_key_values size: 22056960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0964 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 22056960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0937 s and forward past_key_values size: 22118400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0976 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 22118400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0903 s and forward past_key_values size: 22179840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0930 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 22179840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1053 s and forward past_key_values size: 22241280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1087 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 22241280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1008 s and forward past_key_values size: 22302720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1045 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 22302720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1001 s and forward past_key_values size: 22364160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1038 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 22364160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1022 s and forward past_key_values size: 22425600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0020 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1061 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 22425600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1153 s and forward past_key_values size: 22487040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1194 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0014 s and past_key_values size: 22487040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1170 s and forward past_key_values size: 22548480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1211 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 22548480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1025 s and forward past_key_values size: 22609920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1059 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 22609920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1044 s and forward past_key_values size: 22671360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1079 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 22671360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0966 s and forward past_key_values size: 22732800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0995 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 22732800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0903 s and forward past_key_values size: 22794240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0934 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 22794240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1022 s and forward past_key_values size: 22855680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1055 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 22855680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0906 s and forward past_key_values size: 22917120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0940 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 22917120
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0941 s and forward past_key_values size: 22978560
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0973 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 22978560
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0921 s and forward past_key_values size: 23040000
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0950 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0019 s and past_key_values size: 23040000
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1214 s and forward past_key_values size: 23101440
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0017 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1268 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 23101440
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0948 s and forward past_key_values size: 23162880
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.0983 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 23162880
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.0967 s and forward past_key_values size: 23224320
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1001 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 23224320
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1881 s and forward past_key_values size: 23285760
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1910 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 23285760
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1252 s and forward past_key_values size: 23347200
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0024 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1295 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0022 s and past_key_values size: 23347200
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1157 s and forward past_key_values size: 23408640
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0015 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1216 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 23408640
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1037 s and forward past_key_values size: 23470080
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1073 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 23470080
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1099 s and forward past_key_values size: 23531520
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1127 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 23531520
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1326 s and forward past_key_values size: 23592960
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1692 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0005 s and past_key_values size: 23592960
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1056 s and forward past_key_values size: 23654400
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1092 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0011 s and past_key_values size: 23654400
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1034 s and forward past_key_values size: 23715840
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0011 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1079 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 23715840
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1477 s and forward past_key_values size: 23777280
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0012 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1509 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0004 s and past_key_values size: 23777280
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1206 s and forward past_key_values size: 23838720
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0032 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1263 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 23838720
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1208 s and forward past_key_values size: 23900160
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0019 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1254 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 23900160
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1057 s and forward past_key_values size: 23961600
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0014 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1092 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 23961600
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1051 s and forward past_key_values size: 24023040
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1083 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0009 s and past_key_values size: 24023040
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1344 s and forward past_key_values size: 24084480
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0018 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0009 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1384 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0012 s and past_key_values size: 24084480
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1041 s and forward past_key_values size: 24145920
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1082 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 24145920
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1044 s and forward past_key_values size: 24207360
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1081 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0007 s and past_key_values size: 24207360
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1026 s and forward past_key_values size: 24268800
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1062 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0010 s and past_key_values size: 24268800
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1059 s and forward past_key_values size: 24330240
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0022 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0010 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1105 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0006 s and past_key_values size: 24330240
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1038 s and forward past_key_values size: 24391680
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0013 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+DEBUG:ChatTTS.model.gpt:Total iteration time: 0.1071 s
+DEBUG:ChatTTS.model.gpt:Time for input preparation: 0.0008 s and past_key_values size: 24391680
+DEBUG:ChatTTS.model.gpt:Forward pass time: 0.1079 s and forward past_key_values size: 24453120
+DEBUG:ChatTTS.model.gpt:Logits computation time: 0.0016 s
+DEBUG:ChatTTS.model.gpt:Sampling time: 0.0008 s
+mel shape is torch.Size([1, 100, 696])

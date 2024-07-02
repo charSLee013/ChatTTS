@@ -17,6 +17,10 @@ torch._dynamo.config.suppress_errors = True
 torch.set_float32_matmul_precision('high')
 logging.basicConfig(level=logging.DEBUG)
 
+logging.getLogger("ChatTTS.model.gpt").setLevel(logging.DEBUG)    # 给GPT相关信息开启debug
+
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu')
+
 SEED = 1397
 
 #模型下载

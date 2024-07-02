@@ -1,4 +1,5 @@
 import os
+import time
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 import logging
@@ -12,6 +13,7 @@ import torch.nn.functional as F
 import torch.nn.utils.parametrize as P
 from torch.nn.utils.parametrizations import weight_norm
 from transformers import LlamaModel, LlamaConfig
+from transformers.modeling_outputs import BaseModelOutputWithPast
     
     
 class LlamaMLP(nn.Module):
@@ -208,7 +210,8 @@ class GPT_warpper(nn.Module):
         return_hidden=False,   # 是否返回隐藏状态
     ):
         
-        with torch.no_grad():   
+        with torch.no_grad():
+            self.logger.debug(f"Initializing with batch size: {inputs_ids.shape[0]}, sequence length: {inputs_ids.shape[1]}")
         
             attentions = [] # 注意力权重
             hiddens = []   # 隐藏状态
@@ -218,7 +221,7 @@ class GPT_warpper(nn.Module):
             start_idx = inputs_ids.shape[1]
             # 这行代码创建了一个形状为 (batch_size,) 的全零张量，数据类型为 torch.long，并且与 inputs_ids 位于同一个设备上（例如 CPU 或 GPU）
             # end_idx 用于记录每个样本的结束位置。初始化为全零意味着在生成开始时，所有样本的结束位置都未确定
-            end_idx = torch.zeros(inputs_ids.shape[0], device=inputs_ids.device, dtype=torch.long)
+            end_idx = torch.zeros(inputs_ids.shape[0], device=inputs_ids.device).float()
             #  创建一个形状为(batch_size,) 的布尔张量，其中batch_size 就是输入序列的批次大小(说白了就是多少句话)。初始化为全False，表示所有样本尚未完成生成
             finish = torch.zeros(inputs_ids.shape[0], device=inputs_ids.device).bool()
             
@@ -235,6 +238,7 @@ class GPT_warpper(nn.Module):
                  inputs_ids.shape[1]+max_new_token,),  # 表示输入序列的长度加上最大新生成的 token 数，以便容纳输入序列和生成的token
                 dtype=torch.bool, 
                 device=inputs_ids.device)
+            self.logger.debug(f"Creating attention mask cache with size: {inputs_ids.shape[0]} x {inputs_ids.shape[1] + max_new_token}")
             if attention_mask is not None:
                 # 在生成模型中，注意力掩码用于指示模型在处理输入序列时应该关注哪些位置。
                 # attention_mask 通常是一个布尔型张量，其中值为 1 的位置表示模型应该关注的 token，值为 0 的位置表示模型应该忽略的 token
@@ -244,7 +248,10 @@ class GPT_warpper(nn.Module):
                 # 这样就可以确保我们预先输入文本的为有效序列，避免引入无效的注意力信息
                 attention_mask_cache[:, :attention_mask.shape[1]] = attention_mask
             
-            for i in tqdm(range(max_new_token)):
+            # for i in tqdm(range(max_new_token)):
+            for i in range(max_new_token):
+                loop_start_time = time.time()
+                # self.logger.debug(f"\nIteration {i+1}/{max_new_token}")
                 # 在生成过程中，每次迭代都会调用这段代码，以确保模型在每一步都能正确处理输入数据。
                 # 通过传递 past_key_values 和更新的注意力掩码，模型可以高效地生成新的 token，而不必重复计算所有先前的 token 的注意力权重。
                 model_input = self.prepare_inputs_for_generation(
@@ -252,11 +259,13 @@ class GPT_warpper(nn.Module):
                     outputs.past_key_values if i!=0 else None, # 如果不是第一次迭代则获得在前一次生成过程中计算并缓存的注意力键值对
                     attention_mask_cache[:, :inputs_ids.shape[1]], # 从 attention_mask_cache 中截取前 inputs_ids.shape[1] 列，确保注意力掩码的长度与当前输入序列的长度一致
                     use_cache=True)
+                self.logger.debug(f"Time for input preparation: {time.time() - loop_start_time:.4f} s and past_key_values size: {calculate_tensor_size(model_input['past_key_values'])}")
             
                 if i == 0:
                     # 在第一次迭代时，使用初始嵌入 `emb`，
                     model_input['inputs_embeds'] = emb
                 else:
+                    emb_start_time = time.time()
                     # 之后根据 `infer_text` 决定使用文本嵌入还是音频嵌入。
                     if infer_text:
                         model_input['inputs_embeds'] = self.emb_text(model_input['input_ids'][:,:,0])
@@ -266,12 +275,12 @@ class GPT_warpper(nn.Module):
                         
                         code_emb = []   # 用于存储每个向量量化层的嵌入表示
                         # 通过遍历多个向量量化层（VQ 层），为每个层的 token IDs 生成嵌入表示。这种方法可以捕捉输入序列中不同层次的信息
-                        for i in range(self.num_vq):
+                        for x in range(self.num_vq):
                             # model_input['input_ids'] 的形状为 (batch_size, sequence_length, num_vq)
-                            input_ids_i = model_input['input_ids'][:, :, i] # 获取第 i 个向量量化层的 token IDs，形状为 (batch_size, sequence_length)
+                            input_ids_i = model_input['input_ids'][:, :, x] # 获取第 i 个向量量化层的 token IDs，形状为 (batch_size, sequence_length)
                             
                             # self.emb_code[i] 是第 i 个嵌入层，它将 input_ids_i 转换为嵌入表示
-                            emb_i = self.emb_code[i](input_ids_i)   # emb_i 的形状为 (batch_size, sequence_length, embedding_dim)
+                            emb_i = self.emb_code[x](input_ids_i)   # emb_i 的形状为 (batch_size, sequence_length, embedding_dim)
                             # 将每个向量量化层的嵌入表示存储在 code_emb 列表中
                             code_emb.append(emb_i)
 
@@ -289,11 +298,20 @@ class GPT_warpper(nn.Module):
                         # 在多头注意力机制中，不同的头可以看作是不同的层，每个头捕捉输入序列的不同方面的信息
                         # 在多任务学习中，不同的任务可能需要不同的嵌入表示，通过多层嵌入表示可以为每个任务生成特定的嵌入表示
                         # 在一些生成模型中，向量量化技术用于将连续的嵌入表示离散化，以便更好地捕捉输入序列的结构信息
+                    # self.logger.debug(f"Time for embedding computation: {time.time() - emb_start_time:.4f} s")
                 
                 # 由于我们已经生成了嵌入表示并将其存储在 model_input['inputs_embeds'] 中，因此不再需要 input_ids
                 model_input['input_ids'] = None
+                # TODO:clear cache on mps machine
+                if torch.backends.mps.is_available():
+                    torch.mps.empty_cache()
+                # self.logger.debug(f"Forward pass at iteration {i}, input size: {model_input['inputs_embeds'].shape}")
+
                 # 调用 GPT 模型的 forward 方法进行前向传播。
-                outputs = self.gpt.forward(**model_input, output_attentions=return_attn)
+                forward_start_time = time.time()
+                outputs:BaseModelOutputWithPast = self.gpt.forward(**model_input, output_attentions=return_attn)
+                self.logger.debug(f"Forward pass time: {time.time() - forward_start_time:.4f} s and forward past_key_values size: {calculate_tensor_size(outputs.past_key_values)}")
+
                 # 将注意力权重存储到 attentions 列表中，以便后续操作
                 attentions.append(outputs.attentions)
                 # 获取模型的输出隐藏状态，形状为 (batch_size, sequence_length, hidden_size)
@@ -303,6 +321,7 @@ class GPT_warpper(nn.Module):
                 if return_hidden:
                     hiddens.append(hidden_states[:, -1])
 
+                logits_start_time = time.time()
                 with P.cached():
                     if infer_text:  
                         logits = self.head_text(hidden_states) 
@@ -313,7 +332,9 @@ class GPT_warpper(nn.Module):
                 # 获取每个序列的最后一个 token 的 logits，形状为 (batch_size, num_classes)
                 # 将 logits 转换为浮点数，以确保后续计算的精度
                 logits = logits[:, -1].float()
+                self.logger.debug(f"Logits computation time: {time.time() - logits_start_time:.4f} s")
 
+                sampling_start_time = time.time()
                 if not infer_text:
                     # logits 重新排列为形状 (batch_size * num_vq, num_classes)
                     logits = rearrange(logits, "b c n -> (b n) c")
@@ -365,12 +386,16 @@ class GPT_warpper(nn.Module):
                     finish = finish | (idx_next == eos_token).any(1)
                     inputs_ids = torch.cat([inputs_ids, idx_next.unsqueeze(-1).expand(-1, -1, self.num_vq)], 1)
 
+                self.logger.debug(f"Sampling time: {time.time() - sampling_start_time:.4f} s")
+
                 # 更新 `end_idx` 记录每个样本的结束位置
                 end_idx = end_idx + (~finish).int()
 
                 # 如果所有样本都完成生成，退出循环
                 if finish.all():
                     break
+
+                self.logger.debug(f"Total iteration time: {time.time() - loop_start_time:.4f} s")
             
             #  根据 `end_idx` 截取生成的 `inputs_ids`
             # inputs_ids = [inputs_ids[idx, start_idx: start_idx+i] for idx, i in enumerate(end_idx.int())]
@@ -410,3 +435,15 @@ class GPT_warpper(nn.Module):
                 'attentions': attentions,
                 'hiddens':hiddens,
             }
+
+
+def calculate_tensor_size(obj):
+    if isinstance(obj, list) or isinstance(obj, tuple):
+        total_size = sum(calculate_tensor_size(e) for e in obj)
+    elif isinstance(obj, dict):
+        total_size = sum(calculate_tensor_size(v) for v in obj.values())
+    elif isinstance(obj, torch.Tensor):
+        total_size = obj.numel()
+    else:
+        total_size = 0
+    return total_size
