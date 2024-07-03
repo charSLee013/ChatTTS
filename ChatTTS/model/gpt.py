@@ -259,7 +259,7 @@ class GPT_warpper(nn.Module):
                     outputs.past_key_values if i!=0 else None, # 如果不是第一次迭代则获得在前一次生成过程中计算并缓存的注意力键值对
                     attention_mask_cache[:, :inputs_ids.shape[1]], # 从 attention_mask_cache 中截取前 inputs_ids.shape[1] 列，确保注意力掩码的长度与当前输入序列的长度一致
                     use_cache=True)
-                self.logger.debug(f"Time for input preparation: {time.time() - loop_start_time:.4f} s and past_key_values size: {calculate_tensor_size(model_input['past_key_values'])}")
+                self.logger.debug(f"Time for input preparation: {time.time() - loop_start_time:.4f} s and model_input size: {calculate_tensor_size(model_input)}")
             
                 if i == 0:
                     # 在第一次迭代时，使用初始嵌入 `emb`，
@@ -410,8 +410,8 @@ class GPT_warpper(nn.Module):
             # 展开后的代码
             if infer_text:
                 inputs_ids_list = []
-                for i in inputs_ids:
-                    sliced_input = i[:, 0]
+                for x in inputs_ids:
+                    sliced_input = x[:, 0]
                     inputs_ids_list.append(sliced_input)
                 inputs_ids = inputs_ids_list
             
