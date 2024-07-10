@@ -6,13 +6,14 @@ import logging
 from tqdm import tqdm
 from einops import rearrange
 from transformers.cache_utils import Cache
+from transformers.generation.logits_process import LogitsProcessorList
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.utils.parametrize as P
 from torch.nn.utils.parametrizations import weight_norm
-from transformers import LlamaModel, LlamaConfig
+from transformers import LlamaModel, LlamaConfig,LlamaForCausalLM
 from transformers.modeling_outputs import BaseModelOutputWithPast
     
     
@@ -58,24 +59,44 @@ class GPT_warpper(nn.Module):
         # 创建一个包含 num_vq 个线性层的模块列表，每个线性层用于将模型的输出映射回音频令牌空间，并应用权重归一化。
         self.head_code = nn.ModuleList([weight_norm(nn.Linear(self.model_dim, num_audio_tokens, bias=False), name='weight') for i in range(self.num_vq)])
 
-    def build_model(self, config):
+    def build_model(self, config)->LlamaModel:
         
         configuration = LlamaConfig(**config)
         model = LlamaModel(configuration)
         del model.embed_tokens
-        
         return model
     
     def get_emb(self, input_ids, text_mask, **kwargs):
+        """
+        将输入的 token IDs 转换为多头注意力机制下的嵌入向量
+        input_ids 形状为(batch_size, num_text_tokens, num_vq)
+        text_mask 形状为(batch_size, num_text_tokens) 来表示指示哪些 token 是文本 token(True)，哪些是音频 token(False)。
+        """
 
+        """#文本嵌入
+        从 input_ids 中提取出有效文本 token 的 IDs，并使用 self.emb_text 嵌入层将这些 IDs 转换为嵌入向量
+        提取后的嵌入向量形状为(sequence_length, hidden_size) 这里hidden_size 是768
+        """
         emb_text = self.emb_text(input_ids[text_mask][:, 0])
         
+        """#音频嵌入
+        首先是从 input_ids 中提取出音频 token 的 IDs，text_mask中True为文本False为音频，结果的形状为 (num_audio_tokens, num_vq)
+        然后是从提取出的音频 token IDs 中选择第 i 个维度的值，结果的形状为 (num_audio_tokens,)
+        最后是将第 i 个维度的音频 token IDs 通过self.emb_code[i] 转换为嵌入向量
+        得到结果的形状为 (num_audio_tokens, embedding_dim)
+        以此往复直到遍历完全部的嵌入层
+        """
         emb_code = [self.emb_code[i](input_ids[~text_mask][:, i]) for i in range(self.num_vq)]
+        # 这行代码将所有 VQ 层的嵌入向量堆叠在一起，然后在第二个维度也就是嵌入维度上求和，以得到一个综合的音频嵌入向量。
         emb_code = torch.stack(emb_code, 2).sum(2)
         
+        """
+        创建一个全零的张量 emb，其形状与 input_ids 的前两个维度相同，最后一个维度与文本嵌入的维度相同,用于存储文本和音频 token 的嵌入向量
+        """
         emb = torch.zeros((input_ids.shape[:-1])+(emb_text.shape[-1],), device=emb_text.device, dtype=emb_text.dtype)
-        emb[text_mask] = emb_text
-        emb[~text_mask] = emb_code.to(emb.dtype)
+        
+        emb[text_mask] = emb_text   # 将文本嵌入填充到emb中
+        emb[~text_mask] = emb_code.to(emb.dtype) # 将音频嵌入填充到emb中
         
         return emb
     
@@ -100,7 +121,6 @@ class GPT_warpper(nn.Module):
             # 解释：在 GPT 这样的自回归模型，每一步生成新的 token 时，模型需要重新计算所有先前生成的 token 的注意力权重。
             # 这会导致计算量随着生成长度的增加而线性增长。
             # 为了优化这一过程，模型会缓存先前计算的注意力键值对，这样在生成新的 token 时，只需要计算新增的部分，而不必重复计算所有先前的 token。
-            # 
             past_key_values = getattr(self.gpt.layers[0].self_attn, "past_key_value", None)
             has_static_cache = past_key_values is not None
 
@@ -120,7 +140,7 @@ class GPT_warpper(nn.Module):
             # TODO joao: remove this `else` after `generate` prioritizes `Cache` objects
             else:
                 # 如果 past_key_values 不是 Cache 对象，则假设它是一个包含键值对的列表
-                # 通过 past_key_values[0][0].shape[2] 获取缓存的序列长度，并将其赋值给 past_length 和 cache_length
+                # 通过 past_key_values[0][0].shape[2] 获取上一次预测缓存的序列长度，并将其赋值给 past_length 和 cache_length
                 cache_length = past_length = past_key_values[0][0].shape[2]
                 max_cache_length = None
 
@@ -128,7 +148,7 @@ class GPT_warpper(nn.Module):
             # 1 - If the length of the attention_mask exceeds the length of input_ids, then we are in a setting where
             # some of the inputs are exclusively passed as part of the cache (e.g. when passing input_embeds as
             # input)
-            # 如果 attention_mask 不为空且其长度大于 input_ids 的长度，则表示有些输入是作为缓存的一部分传递的（例如，当传递 input_embeds 作为输入时）
+            # 如果 attention_mask 不为空且其长度大于 input_ids 的长度，则表示有些输入是作为缓存的一部分传递的(例如，当传递 input_embeds 作为输入时)
             if attention_mask is not None and attention_mask.shape[1] > input_ids.shape[1]:
                 # 在这种情况下，更新 input_ids 以仅保留未处理的 token。具体来说，保留从 input_ids 的末尾开始，长度为 attention_mask.shape[1] - past_length 的部分
                 input_ids = input_ids[:, -(attention_mask.shape[1] - past_length) :]
@@ -136,7 +156,8 @@ class GPT_warpper(nn.Module):
             # input_ids based on the past_length.
             # 如果 past_length 小于 input_ids 的长度，则表示 input_ids 包含所有输入 token
             elif past_length < input_ids.shape[1]:
-                # 在这种情况下，更新 input_ids 以仅保留未处理的 token。具体来说，保留从 input_ids 的 past_length 位置开始的部分
+                # 在这种情况下，更新 input_ids 以仅保留未处理的 token。从 input_ids 的 past_length 位置开始截断
+                # 这样input_ids 只保留未缓存的token，因为之前数据都缓存在了past_key_value上了
                 input_ids = input_ids[:, past_length:]
             # 3 - Otherwise (past_length >= input_ids.shape[1]), let's assume input_ids only has unprocessed tokens.
 
@@ -185,7 +206,7 @@ class GPT_warpper(nn.Module):
 
         model_inputs.update(
             {
-                "position_ids": position_ids,
+                "position_ids": position_ids,   # position_ids 提供了输入序列中每个标记的位置信息。位置嵌入与词嵌入结合，使模型能够理解序列中标记的顺序。
                 "cache_position": cache_position,
                 "past_key_values": past_key_values,
                 "use_cache": kwargs.get("use_cache"),
@@ -208,6 +229,7 @@ class GPT_warpper(nn.Module):
         infer_text=False,      # 是否生成文本
         return_attn=False,     # 是否返回注意力权重
         return_hidden=False,   # 是否返回隐藏状态
+        logits_processor:LogitsProcessorList = None,
     ):
         
         with torch.no_grad():
@@ -219,7 +241,7 @@ class GPT_warpper(nn.Module):
             # 用于记录输入序列的初始长度。在生成新 token 时，这个值可以帮助确定新生成的 token 应该添加到输入序列的哪个位置。
             # inputs_ids 的第二个维度的大小，即输入序列的长度。inputs_ids 是一个形状为 (batch_size, sequence_length, num_vq) 的张量，因此 start_idx 保存了输入序列的位置
             start_idx = inputs_ids.shape[1]
-            # 这行代码创建了一个形状为 (batch_size,) 的全零张量，数据类型为 torch.long，并且与 inputs_ids 位于同一个设备上（例如 CPU 或 GPU）
+            # 这行代码创建了一个形状为 (batch_size,) 的全零张量，数据类型为 torch.long，并且与 inputs_ids 位于同一个设备上(例如 CPU 或 GPU)
             # end_idx 用于记录每个样本的结束位置。初始化为全零意味着在生成开始时，所有样本的结束位置都未确定
             end_idx = torch.zeros(inputs_ids.shape[0], device=inputs_ids.device).float()
             #  创建一个形状为(batch_size,) 的布尔张量，其中batch_size 就是输入序列的批次大小(说白了就是多少句话)。初始化为全False，表示所有样本尚未完成生成
@@ -234,7 +256,7 @@ class GPT_warpper(nn.Module):
 
             # 用于存储注意力掩码
             attention_mask_cache = torch.ones(  # 创建一个全为 1 的张量
-                (inputs_ids.shape[0], # 表示批次大小（batch size）。
+                (inputs_ids.shape[0], # 表示批次大小(batch size)。
                  inputs_ids.shape[1]+max_new_token,),  # 表示输入序列的长度加上最大新生成的 token 数，以便容纳输入序列和生成的token
                 dtype=torch.bool, 
                 device=inputs_ids.device)
@@ -268,13 +290,14 @@ class GPT_warpper(nn.Module):
                     emb_start_time = time.time()
                     # 之后根据 `infer_text` 决定使用文本嵌入还是音频嵌入。
                     if infer_text:
+                        # 文本嵌入只需要786维度即可,不需要考虑(vq_num)量化层
                         model_input['inputs_embeds'] = self.emb_text(model_input['input_ids'][:,:,0])
                     else:
                         # code_emb = [self.emb_code[i](model_input['input_ids'][:,:,i]) for i in range(self.num_vq)]
                         # model_input['inputs_embeds'] = torch.stack(code_emb, 3).sum(3)
                         
                         code_emb = []   # 用于存储每个向量量化层的嵌入表示
-                        # 通过遍历多个向量量化层（VQ 层），为每个层的 token IDs 生成嵌入表示。这种方法可以捕捉输入序列中不同层次的信息
+                        # 通过遍历多个向量量化层(VQ 层)，为每个层的 token IDs 生成嵌入表示。这种方法可以捕捉输入序列中不同层次的信息
                         for x in range(self.num_vq):
                             # model_input['input_ids'] 的形状为 (batch_size, sequence_length, num_vq)
                             input_ids_i = model_input['input_ids'][:, :, x] # 获取第 i 个向量量化层的 token IDs，形状为 (batch_size, sequence_length)
@@ -285,7 +308,7 @@ class GPT_warpper(nn.Module):
                             code_emb.append(emb_i)
 
                         # 堆叠后的形状为 (batch_size, sequence_length, embedding_dim, num_vq)
-                        stacked_emb = torch.stack(code_emb, 3)
+                        stacked_emb = torch.stack(code_emb, 3)  
                         
                         # 对堆叠后的张量在第 3 维度上进行求和
                         final_emb = stacked_emb.sum(3)
@@ -307,8 +330,10 @@ class GPT_warpper(nn.Module):
                     torch.mps.empty_cache()
                 # self.logger.debug(f"Forward pass at iteration {i}, input size: {model_input['inputs_embeds'].shape}")
 
-                # 调用 GPT 模型的 forward 方法进行前向传播。
+                # 调用 LLAMA 模型的 forward 方法进行前向传播。
                 forward_start_time = time.time()
+                # only debug
+                input_emb = model_input['inputs_embeds']
                 outputs:BaseModelOutputWithPast = self.gpt.forward(**model_input, output_attentions=return_attn)
                 self.logger.debug(f"Forward pass time: {time.time() - forward_start_time:.4f} s and forward past_key_values size: {calculate_tensor_size(outputs.past_key_values)}")
 
@@ -317,7 +342,7 @@ class GPT_warpper(nn.Module):
                 # 获取模型的输出隐藏状态，形状为 (batch_size, sequence_length, hidden_size)
                 # 这些隐藏状态包含了模型对输入序列的表示
                 # 存储隐藏状态可以用于下游任务，如分类、生成等
-                hidden_states = outputs[0] # 🐻
+                hidden_states = outputs[0] # 等价于 outputs.last_hidden_state
                 if return_hidden:
                     hiddens.append(hidden_states[:, -1])
 
@@ -326,7 +351,7 @@ class GPT_warpper(nn.Module):
                     if infer_text:  
                         logits = self.head_text(hidden_states) 
                     else:
-                        # 使用 self.head_code 的多个头（self.num_vq）处理隐藏状态，并将结果堆叠在一起，生成代码的 logits
+                        # 使用 self.head_code 的多个头(self.num_vq)处理隐藏状态，并将结果堆叠在一起，生成代码的 logits
                         logits = torch.stack([self.head_code[i](hidden_states) for i in range(self.num_vq)], 3)
         
                 # 获取每个序列的最后一个 token 的 logits，形状为 (batch_size, num_classes)
@@ -343,6 +368,7 @@ class GPT_warpper(nn.Module):
                 else:
                     logits_token = inputs_ids[:, start_idx:, 0]
                 
+                # logits = logits_processor(logits_token, logits)
                 # 将 logits 除以温度参数 temperature，以控制模型输出的平滑度
                 # 较高的温度会使分布更加平滑，较低的温度会使分布更加尖锐。
                 logits = logits / temperature
@@ -369,7 +395,7 @@ class GPT_warpper(nn.Module):
                 # 使用多项式分布从分数中采样下一个 token 的索引
                 # num_samples=1 表示每次采样一个 token
                 idx_next = torch.multinomial(scores, num_samples=1)
-                
+
                 if not infer_text:
                     # idx_next 重新排列为形状 (batch_size, num_vq)
                     idx_next = rearrange(idx_next, "(b n) 1 -> b n", n=self.num_vq)
@@ -404,6 +430,7 @@ class GPT_warpper(nn.Module):
             # 以便模型能够处理变长的输入序列。这在生成任务中非常重要，因为生成的序列长度可能会有所不同
             inputs_ids_list = []
             for idx, i in enumerate(end_idx.int()):
+                # 这里的i是每个序列的结束位置
                 sliced_input = inputs_ids[idx, start_idx: start_idx+i]
                 inputs_ids_list.append(sliced_input)
             inputs_ids = inputs_ids_list
@@ -426,7 +453,6 @@ class GPT_warpper(nn.Module):
                     sliced_hidden = hiddens[idx, :i]
                     hiddens_list.append(sliced_hidden)
                 hiddens = hiddens_list
-                    
             if not finish.all():
                 self.logger.warn(f'Incomplete result. hit max_new_token: {max_new_token}')    
                    

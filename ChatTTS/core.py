@@ -170,6 +170,7 @@ class Chat:
                 text[i] = apply_character_map(t)
 
         if not skip_refine_text:
+            # 遍历text列表，单独对每个文本进行预处理
             text_tokens = refine_text(
                 self.pretrain_models, text, **params_refine_text)['ids']
             text_tokens = [i[i < self.pretrain_models['tokenizer'].convert_tokens_to_ids(
@@ -208,6 +209,7 @@ class Chat:
         self,
         text,
         params_infer_code={'prompt': '[speed_5]'},
+        dvae = False,   # 是否使用dave进行解码
     ):
 
         assert self.check_model(use_decoder=True)
@@ -222,11 +224,15 @@ class Chat:
         # Perform inference directly to get hidden representations
         result = infer_code(self.pretrain_models, text, **params_infer_code, return_hidden=True)
         
-        # Extracting hiddens from the result
-        hiddens = result['hiddens']
+        if dvae:
+            hiddens = result['ids']
+            mel_spec = [self.pretrain_models['dvae'](i[None].permute(0, 2, 1)) for i in hiddens]
+        else:
+            # Extracting hiddens from the result
+            hiddens = result['hiddens']
 
-        # Decode using the decoder to get Mel spectrograms
-        mel_spec = [self.pretrain_models['decoder'](i[None].permute(0, 2, 1)) for i in hiddens]
+            # Decode using the decoder to get Mel spectrograms
+            mel_spec = [self.pretrain_models['decoder'](i[None].permute(0, 2, 1)) for i in hiddens]
 
         # Convert Mel spectrograms to audio signals
         wav = [self.pretrain_models['vocos'].decode(i).cpu().numpy() for i in mel_spec]

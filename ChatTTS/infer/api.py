@@ -1,38 +1,49 @@
 
 import torch
 import torch.nn.functional as F
-from transformers.generation import TopKLogitsWarper, TopPLogitsWarper
+from transformers.generation.logits_process import TopKLogitsWarper, TopPLogitsWarper, LogitsProcessorList, TemperatureLogitsWarper, RepetitionPenaltyLogitsProcessor
+
+from ChatTTS.model.gpt import GPT_warpper
 from ..utils.infer_utils import CustomRepetitionPenaltyLogitsProcessorRepeat
+
 
 def infer_code(
     models,
-    text, 
-    spk_emb = None,
-    top_P = 0.7, 
-    top_K = 20, 
-    temperature = 0.3, 
-    repetition_penalty = 1.05,
-    max_new_token = 2048,
+    text,
+    spk_emb=None,
+    top_P=0.7,
+    top_K=20,
+    temperature=0.3,
+    repetition_penalty=1.05,
+    max_new_token=2048,
     **kwargs
 ):
-    
+
     device = next(models['gpt'].parameters()).device
-    
-    if not isinstance(text, list): 
+
+    if not isinstance(text, list):
         text = [text]
-        
+
+    temperature_num = temperature
     if not isinstance(temperature, list):
         temperature = [temperature] * models['gpt'].num_vq
-    
+
     if spk_emb is not None:
-        text = [f'[Stts][spk_emb]{i}[Ptts]' for i in text] 
+        text = [f'[Stts][spk_emb]{i}[Ptts]' for i in text]
     else:
         text = [f'[Stts][empty_spk]{i}[Ptts]' for i in text]
-    
-    text_token = models['tokenizer'](text, return_tensors='pt', add_special_tokens=False, padding=True).to(device)
-    input_ids = text_token['input_ids'][...,None].expand(-1, -1, models['gpt'].num_vq)
-    text_mask = torch.ones(text_token['input_ids'].shape, dtype=bool, device=device)
-    
+
+    # 开启padding可以自动对齐
+    # 对齐方式是右对齐
+    # 比如说 [A,B,C] 和 [D,E] 的话得出attention_mask是 [[1,1,1], [0,1,1]]
+    text_token = models['tokenizer'](
+        text, return_tensors='pt', add_special_tokens=False, padding=True).to(device)
+    # 将(batch_size,sequence_length 扩展到 (batch_size, sequenece_length, num_vq) 形状
+    input_ids = text_token['input_ids'][...,
+                                        None].expand(-1, -1, models['gpt'].num_vq)
+    text_mask = torch.ones(
+        text_token['input_ids'].shape, dtype=bool, device=device)
+
     inputs = {
         'input_ids': input_ids,
         'text_mask': text_mask,
@@ -42,11 +53,12 @@ def infer_code(
     emb = models['gpt'].get_emb(**inputs)
     if spk_emb is not None:
         # 获取 [spk_emb] 标记的 token ID
-        spk_emb_token_id = models['tokenizer'].convert_tokens_to_ids('[spk_emb]')
-        
+        spk_emb_token_id = models['tokenizer'].convert_tokens_to_ids(
+            '[spk_emb]')
+
         # 找到 input_ids 中等于 spk_emb_token_id 的位置
         spk_emb_positions = inputs['input_ids'][..., 0] == spk_emb_token_id
-        
+
         # 这部分代码将 spk_emb 移动到与模型相同的设备(CPU或GPU)。
         # device 是通过 next(models['gpt'].parameters()).device 获取的。
         spk_emb_device = spk_emb.to(device)
@@ -65,69 +77,79 @@ def infer_code(
 
         # 归一化的结果是每个嵌入向量的 L2 范数为 1。
         normalized_spk_emb = F.normalize(
-            spk_emb_expanded, 
+            spk_emb_expanded,
             p=2.0,  # 使用 L2 范数(欧几里得范数)进行归一化。
             dim=1,  # 在第一个维度上进行归一化，即对每个嵌入向量进行归一化。
-            eps=1e-12 # 一个小的 epsilon 值，用于避免除零错误。 
+            eps=1e-12  # 一个小的 epsilon 值，用于避免除零错误。
         )
-        
+
         # 将 emb 中对应 spk_emb_positions 的位置替换为 normalized_spk_emb
         emb[spk_emb_positions] = normalized_spk_emb
-        
+
         # emb[inputs['input_ids'][..., 0] == models['tokenizer'].convert_tokens_to_ids('[spk_emb]')] = \
         #     F.normalize(spk_emb.to(device).to(emb.dtype)[None].expand(len(text), -1), p=2.0, dim=1, eps=1e-12)
-    
+
+    # 从嵌入层里面获取eos的token id
     num_code = models['gpt'].emb_code[0].num_embeddings - 1
-    
+
     LogitsWarpers = []
     if top_P is not None:
         LogitsWarpers.append(TopPLogitsWarper(top_P, min_tokens_to_keep=3))
     if top_K is not None:
         LogitsWarpers.append(TopKLogitsWarper(top_K, min_tokens_to_keep=3))
-        
+
     LogitsProcessors = []
     if repetition_penalty is not None and repetition_penalty != 1:
-        LogitsProcessors.append(CustomRepetitionPenaltyLogitsProcessorRepeat(\
+        LogitsProcessors.append(CustomRepetitionPenaltyLogitsProcessorRepeat(
             repetition_penalty, num_code, 16))
-    
-    result = models['gpt'].generate(
-        emb, inputs['input_ids'], 
-        temperature = torch.tensor(temperature, device=device), 
-        attention_mask = inputs['attention_mask'],
-        LogitsWarpers = LogitsWarpers,
-        LogitsProcessors = LogitsProcessors,
-        eos_token = num_code, 
-        max_new_token = max_new_token, 
-        infer_text = False,
-        **kwargs
+
+    gpt: GPT_warpper = models['gpt']
+    result = gpt.generate(
+        emb=emb,
+        inputs_ids=inputs['input_ids'],
+        temperature=torch.tensor(temperature, device=device),
+        attention_mask=inputs['attention_mask'],
+        LogitsWarpers=LogitsWarpers,
+        LogitsProcessors=LogitsProcessors,
+        eos_token=num_code,
+        max_new_token=max_new_token,
+        infer_text=False,
+        logits_processor=LogitsProcessorList([
+            TemperatureLogitsWarper(temperature_num),
+            TopKLogitsWarper(top_k=top_K),
+            TopPLogitsWarper(top_p=top_P),
+            RepetitionPenaltyLogitsProcessor(penalty=repetition_penalty),
+        ]),
+        ** kwargs
     )
-    
+
     return result
 
 
 def refine_text(
-    models, 
+    models,
     text,
-    top_P = 0.7, 
-    top_K = 20, 
-    temperature = 0.7, 
-    repetition_penalty = 1.2,
-    max_new_token = 384,
-    prompt = '',
+    top_P=0.7,
+    top_K=20,
+    temperature=0.7,
+    repetition_penalty=1.2,
+    max_new_token=384,
+    prompt='',
     **kwargs
 ):
     # 确保text参数是一个列表
     device = next(models['gpt'].parameters()).device
-    if not isinstance(text, list): 
+    if not isinstance(text, list):
         text = [text]
     assert len(text), 'text should not be empty'
-    
+
     # 给每个输入文本前加上特殊标记[Sbreak]，用于模型识别不同的文本开始
     # 然后加上[Pbreak]和prompt，prompt是需要合成的语音的文本
     text = [f"[Sbreak]{i}[Pbreak]{prompt}" for i in text]
-    
+
     # 模型的tokenizer将文本转换为token IDs，并返回PyTorch张量
-    text_token = models['tokenizer'](text, return_tensors='pt', add_special_tokens=False, padding=True).to(device)
+    text_token = models['tokenizer'](
+        text, return_tensors='pt', add_special_tokens=False, padding=True).to(device)
 
     """
     这里的展开讲讲text_token里面的内容
@@ -142,9 +164,10 @@ def refine_text(
 
     # attention_mask: 一个布尔张量，它用于指示哪些位置的token是实际的文本内容，哪些位置是由于填充(padding)而添加的。在处理不同长度的文本序列时，为了能够批量处理，通常会将较短的序列填充到相同的长度。attention_mask中的1表示对应的input_ids位置是有效的文本内容，而0则表示该位置是填充的，模型应该忽略这部分。这对于自注意力机制来说至关重要，因为它告诉模型在计算注意力权重时哪些位置应该被考虑，哪些应该被忽略
     """
-    
+
     # 创建一个与输入形状相同的文本掩码，所有值为True。
-    text_mask = torch.ones(text_token['input_ids'].shape, dtype=bool, device=device)
+    text_mask = torch.ones(
+        text_token['input_ids'].shape, dtype=bool, device=device)
 
     """
     # 创建一个字典，包含输入的ID张量、文本掩码和注意力掩码，扩展维度以适应模型的预期输入格式
@@ -160,7 +183,7 @@ def refine_text(
     扩展维度：通过将 input_ids 扩展到 (batch_size, sequence_length, models['gpt'].num_vq)，可以为每个 token ID 生成多个向量量化版本的嵌入表示。
     """
     inputs = {
-        'input_ids': text_token['input_ids'][...,None].expand(-1, -1, models['gpt'].num_vq),
+        'input_ids': text_token['input_ids'][..., None].expand(-1, -1, models['gpt'].num_vq),
         'text_mask': text_mask,
         'attention_mask': text_token['attention_mask'],
     }
@@ -172,23 +195,26 @@ def refine_text(
     if top_K is not None:
         # 保留的最高概率词汇的数量
         LogitsWarpers.append(TopKLogitsWarper(top_K, min_tokens_to_keep=3))
-        
+
     LogitsProcessors = []
     if repetition_penalty is not None and repetition_penalty != 1:
         # 对已经生成的词汇施加惩罚，减少它们再次被选中的概率。
-        LogitsProcessors.append(CustomRepetitionPenaltyLogitsProcessorRepeat(repetition_penalty, len(models['tokenizer']), 16))
-    
+        LogitsProcessors.append(CustomRepetitionPenaltyLogitsProcessorRepeat(
+            repetition_penalty, len(models['tokenizer']), 16))
+
     result = models['gpt'].generate(
-        models['gpt'].get_emb(**inputs), # 输入的嵌入表示，通常是通过模型的嵌入层生成的。
+        models['gpt'].get_emb(**inputs),  # 输入的嵌入表示，通常是通过模型的嵌入层生成的。
         inputs['input_ids'],    # 输入文本的token IDs。
-        temperature = torch.tensor([temperature,], # 控制生成文本多样性的参数。较高的温度会使生成的文本更加多样化，较低的温度会使生成的文本更加确定性。
-                                   device=device), 
-        attention_mask = inputs['attention_mask'], # 这是一个掩码，用于指示哪些token是有效的，哪些是填充的。
-        LogitsWarpers = LogitsWarpers,
-        LogitsProcessors = LogitsProcessors,
-        eos_token = torch.tensor(models['tokenizer'].convert_tokens_to_ids('[Ebreak]'), device=device)[None], # 这是结束标记的token ID，当生成的文本包含这个token时，生成过程会停止。
-        max_new_token = max_new_token,  # 这是生成的最大token数量。
-        infer_text = True,
+        temperature=torch.tensor([temperature,],  # 控制生成文本多样性的参数。较高的温度会使生成的文本更加多样化，较低的温度会使生成的文本更加确定性。
+                                 device=device),
+        # 这是一个掩码，用于指示哪些token是有效的，哪些是填充的。
+        attention_mask=inputs['attention_mask'],
+        LogitsWarpers=LogitsWarpers,
+        LogitsProcessors=LogitsProcessors,
+        eos_token=torch.tensor(models['tokenizer'].convert_tokens_to_ids(
+            '[Ebreak]'), device=device)[None],  # 这是结束标记的token ID，当生成的文本包含这个token时，生成过程会停止。
+        max_new_token=max_new_token,  # 这是生成的最大token数量。
+        infer_text=True,
         **kwargs
     )
     return result
