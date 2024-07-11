@@ -227,7 +227,6 @@ def generate_with_sampling(prompt, max_new_tokens,max_batch_size=8, **kwargs) ->
         cache_position: 缓存位置，用于指示模型应该从哪个位置开始生成，让相同的token以按照一定的顺序进行排列，比如说 [0,1,2,3]
         """
 
-
         if i != 0:
             # 因为采用了自制的多头注意力机制
             # 需要将input_ids 转换成input_embeding方式
@@ -284,7 +283,7 @@ def generate_with_sampling(prompt, max_new_tokens,max_batch_size=8, **kwargs) ->
 
         # 检查任意是否生成了结束标记
         # 注意！这里只是为了简便才这么做，需要根据不同的batch的情况来具体分析才对
-        if (eos_token_id == next_tokens).any(0).item():
+        if (eos_token_id == idx_next).any(0).any(0).item():
             break
 
         past_key_values = outputs.past_key_values

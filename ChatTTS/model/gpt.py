@@ -98,7 +98,8 @@ class GPT_warpper(nn.Module):
         emb[text_mask] = emb_text   # 将文本嵌入填充到emb中
         emb[~text_mask] = emb_code.to(emb.dtype) # 将音频嵌入填充到emb中
         
-        return emb
+        attention_mask = kwargs.get('attention_mask',torch.ones_like(emb))
+        return emb * attention_mask.unsqueeze(-1).float()
     
     def prepare_inputs_for_generation(
         self, input_ids, # 输入序列的 ID。
