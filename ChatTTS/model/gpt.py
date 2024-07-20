@@ -1,15 +1,9 @@
-import os, platform
-
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-"""
-https://stackoverflow.com/questions/62691279/how-to-disable-tokenizers-parallelism-true-false-warning
-"""
-
+import platform
 from dataclasses import dataclass
 import logging
 from typing import Union, List, Optional, Tuple
+import gc
 
-import omegaconf
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -28,9 +22,9 @@ from ..utils import del_all
 class GPT(nn.Module):
     def __init__(
         self,
-        gpt_config: omegaconf.DictConfig,
-        num_audio_tokens: int,
-        num_text_tokens: int,
+        gpt_config: dict,
+        num_audio_tokens: int = 626,
+        num_text_tokens: int = 21178,
         num_vq=4,
         use_flash_attn=False,
         device=torch.device("cpu"),
@@ -48,7 +42,8 @@ class GPT(nn.Module):
 
         self.use_flash_attn = use_flash_attn
 
-        self.gpt = self._build_llama(gpt_config, self.device_gpt)
+        self.gpt, self.llama_config = self._build_llama(gpt_config, self.device_gpt)
+        self.is_te_llama = False
         self.model_dim = int(self.gpt.config.hidden_size)
         self.emb_code = nn.ModuleList(
             [
@@ -88,6 +83,29 @@ class GPT(nn.Module):
             ],
         )
 
+    def from_pretrained(self, file_path: str):
+
+        self.load_state_dict(torch.load(file_path, weights_only=True, mmap=True))
+
+        if (
+            "cuda" in str(self.device_gpt) and platform.system().lower() == "linux"
+        ):  # is TELlamaModel
+            try:
+                from .cuda import TELlamaModel
+
+                self.logger.info("Linux with CUDA, try NVIDIA accelerated TELlamaModel")
+                state_dict = self.gpt.state_dict()
+                vanilla = TELlamaModel.from_state_dict(state_dict, self.llama_config)
+                # Force mem release. Taken from huggingface code
+                del state_dict, self.gpt
+                gc.collect()
+                self.gpt = vanilla
+                self.is_te_llama = True
+            except Exception as e:
+                self.logger.warning(
+                    f"use default LlamaModel for importing TELlamaModel error: {e}"
+                )
+
     class Context:
         def __init__(self):
             self._interrupt = False
@@ -100,44 +118,30 @@ class GPT(nn.Module):
 
     def _build_llama(
         self,
-        config: omegaconf.DictConfig,
+        config: dict,
         device: torch.device,
-    ) -> LlamaModel:
+    ) -> Tuple[LlamaModel, LlamaConfig]:
 
-        model = None
+        if self.use_flash_attn and is_flash_attn_2_available():
+            llama_config = LlamaConfig(
+                **config,
+                attn_implementation="flash_attention_2",
+            )
+            self.logger.warning(
+                "enabling flash_attention_2 may make gpt be even slower"
+            )
+        else:
+            llama_config = LlamaConfig(**config)
 
-        if "cuda" in str(device) and platform.system().lower() == "linux":
-            try:
-                from .cuda import TELlamaModel
-
-                model = TELlamaModel(LlamaConfig(**config))
-                self.logger.info("Linux with CUDA, try NVIDIA accelerated TELlamaModel")
-            except Exception as e:
-                model = None
-                self.logger.warning(
-                    f"use default LlamaModel for importing TELlamaModel error: {e}"
-                )
-
-        if model is None:
-            if self.use_flash_attn and is_flash_attn_2_available():
-                llama_config = LlamaConfig(
-                    **config,
-                    attn_implementation="flash_attention_2",
-                )
-                self.logger.warning(
-                    "enabling flash_attention_2 may make gpt be even slower"
-                )
-            else:
-                llama_config = LlamaConfig(**config)
-            model = LlamaModel(llama_config)
+        model = LlamaModel(llama_config)
         del model.embed_tokens
 
-        return model.to(device)
+        return model.to(device), llama_config
 
     def prepare(self, compile=False):
         if self.use_flash_attn and is_flash_attn_2_available():
             self.gpt = self.gpt.to(dtype=torch.float16)
-        if compile:
+        if compile and not self.is_te_llama:
             try:
                 self.compile(backend="inductor", dynamic=True)
                 self.gpt.compile(backend="inductor", dynamic=True)
@@ -215,9 +219,10 @@ class GPT(nn.Module):
         # TODO joao: standardize interface for the different Cache classes and remove of this if
         has_static_cache = False
         if past_key_values is None:
-            past_key_values = getattr(
-                self.gpt.layers[0].self_attn, "past_key_value", None
-            )
+            if hasattr(self.gpt.layers[0], "self_attn"):
+                past_key_values = getattr(
+                    self.gpt.layers[0].self_attn, "past_key_value", None
+                )
             has_static_cache = past_key_values is not None
 
         past_length = 0
@@ -416,7 +421,7 @@ class GPT(nn.Module):
                 inputs_ids,
                 past_key_values,
                 attention_mask_cache.narrow(1, 0, inputs_ids.shape[1]),
-                use_cache=True,
+                use_cache=not self.is_te_llama,
             )
 
             if i > 0:
@@ -509,6 +514,8 @@ class GPT(nn.Module):
 
             idx_next = torch.multinomial(scores, num_samples=1).to(finish.device)
 
+            del scores
+
             if not infer_text:
                 # idx_next = rearrange(idx_next, "(b n) 1 -> b n", n=self.num_vq)
                 idx_next = idx_next.view(-1, self.num_vq)
@@ -565,6 +572,7 @@ class GPT(nn.Module):
                         stream,
                         show_tqdm,
                         ensure_non_empty,
+                        stream_batch,
                         context,
                     )
                     for result in new_gen:
