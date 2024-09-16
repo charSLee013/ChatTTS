@@ -10,8 +10,8 @@ import argparse
 
 import gradio as gr
 
-from examples.web.funcs import *
-from examples.web.ex import ex
+from funcs import *
+from ex import ex
 
 
 def main():
@@ -205,6 +205,9 @@ def main():
                     text_input,
                     text_seed_input,
                     refine_text_checkbox,
+                    temperature_slider,
+                    top_p_slider,
+                    top_k_slider,
                 ],
                 outputs=text_output,
             ).then(
